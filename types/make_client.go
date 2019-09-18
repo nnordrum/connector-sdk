@@ -1,4 +1,4 @@
-package connector_sdk
+package types
 
 import (
 	"net"

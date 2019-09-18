@@ -1,4 +1,4 @@
-package connector_sdk
+package types
 
 import (
 	"context"
@@ -90,7 +90,7 @@ func NewController(credentials *auth.BasicAuthCredentials, config *ControllerCon
 
 			controller.Lock.RLock()
 			for _, sub := range controller.Subscribers {
-				sub.Response(res)
+				Response(res)
 			}
 			controller.Lock.RUnlock()
 		}
