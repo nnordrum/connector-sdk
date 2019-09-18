@@ -1,4 +1,4 @@
-module github.com/nnordrum/connector-sdk/types
+module github.com/openfaas/connector-sdk/types
 
 go 1.12
 
