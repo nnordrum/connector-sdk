@@ -66,7 +66,7 @@ func NewController(credentials *auth.BasicAuthCredentials, config *ControllerCon
 		MakeClient(config.UpstreamTimeout),
 		config.PrintResponse)
 
-	subs := []ResponseSubscriber{}
+	var subs []ResponseSubscriber
 
 	topicMap := NewTopicMap()
 
@@ -90,7 +90,7 @@ func NewController(credentials *auth.BasicAuthCredentials, config *ControllerCon
 
 			controller.Lock.RLock()
 			for _, sub := range controller.Subscribers {
-				Response(res)
+				sub.Response(res)
 			}
 			controller.Lock.RUnlock()
 		}
